@@ -1,0 +1,21 @@
+title 0.6 SPA POST New Note
+
+note right of client:
+client enters text into note input 
+clicks Save button
+end note
+client->client: push note to list
+note right of client:
+clear text input
+end note
+
+client->+server: xhr HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note left of server: 
+server receives note
+saves it to db
+end note
+
+server->-client: 201
+client->server: xhr HTTP GET https://fullstack-exampleapp.herokuall.com/data.json
+server-->client: [{content: "entered text", date: utcNow()},...]

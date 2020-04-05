@@ -1,0 +1,16 @@
+title 0.4 New Note
+
+note right of client:
+client enters text into note input 
+clicks Save button
+end note
+
+client->+server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+
+note left of server: 
+server receives note
+saves it to db
+end note
+
+server-->-client: 302 https://fullstack-exampleapp.herokuall.com/notes
+client->server: HTTP GET https://fullstack-exampleapp.herokuall.com/notes

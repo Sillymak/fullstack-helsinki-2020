@@ -1,0 +1,22 @@
+title 0.5 SPA Load Notes
+
+client->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+server-->client: HTML-code response
+client->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->client: main.css
+client->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+server-->client: spa.js
+
+note over client:
+browser starts executing js code
+that requests JSON data from server
+end note
+
+client->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->client: json data
+
+note over client:
+XMLHttpRequest on readyState 4 and 200
+Loads notes from json data
+into 'ul' element on page
+end note
